@@ -13,13 +13,13 @@
   :root {
     --background: #f4f4f5; /* Light zinc */
     --foreground: #09090b; /* Dark zinc */
-    --accent: #10b981; 
+    --accent: #172DE2; 
   }
   
   .dark {
     --background: #09090b;
     --foreground: #fafafa;
-    --accent: #10b981;
+    --accent: #172DE2;
   }
 }
 
@@ -49,3 +49,29 @@
   animation-play-state: paused;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--background);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border-left: 1px solid var(--foreground);
+  opacity: 0.1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--foreground) 30%, transparent);
+  border-radius: 5px;
+  border: 2px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--foreground) 50%, transparent);
+}
+
+/* Fallback smooth scroll */
+html {
+  scroll-behavior: smooth;
+}

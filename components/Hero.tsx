@@ -1,11 +1,24 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export function Hero() {
+  const { t } = useLanguage();
+  const { scrollY } = useScroll();
+
+  // Scroll interactive parallax effects
+  const titleY = useTransform(scrollY, [0, 800], [0, 200]); // Más profundidad
+  const photoContainerY = useTransform(scrollY, [0, 800], [0, -100]); // Sube el contenedor
+  const photoInnerY = useTransform(scrollY, [0, 800], ["-10%", "10%"]); // Parallax interno de la imagen
+  const heroOpacity = useTransform(scrollY, [0, 600], [1, 0]);
+
   return (
-    <section className="relative min-h-screen flex flex-col justify-between px-6 pt-28 pb-12 md:px-12 md:py-12 overflow-hidden">
+    <motion.section 
+      style={{ opacity: heroOpacity }}
+      className="relative min-h-screen flex flex-col justify-between px-6 pt-28 pb-12 md:px-12 md:py-12 overflow-hidden"
+    >
       {/* Top small title */}
       <motion.div 
         initial={{ opacity: 0 }}
@@ -14,7 +27,7 @@ export function Hero() {
         className="mt-12 md:mt-16"
       >
         <p className="text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-foreground/50">
-          Software Engineer & Full-Stack Developer
+          {t("hero_role")}
         </p>
       </motion.div>
 
@@ -22,8 +35,8 @@ export function Hero() {
       <div className="flex-1 flex items-center my-8 md:my-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
           
-          {/* Left Column: Big Typography */}
-          <div className="lg:col-span-7 xl:col-span-8 flex flex-col justify-center">
+          {/* Left Column: Big Typography with Parallax */}
+          <motion.div style={{ y: titleY }} className="lg:col-span-7 xl:col-span-8 flex flex-col justify-center">
             <motion.h1 
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -31,7 +44,7 @@ export function Hero() {
               className="font-display font-black leading-[0.88] tracking-tighter uppercase text-foreground"
               style={{ fontSize: "clamp(3.8rem, 12vw, 11.5rem)" }}
             >
-              Rolando
+              {t("hero_name_first")}
             </motion.h1>
             <motion.h1 
               initial={{ opacity: 0, y: 40 }}
@@ -40,18 +53,19 @@ export function Hero() {
               className="font-display font-black leading-[0.88] tracking-tighter uppercase text-foreground"
               style={{ fontSize: "clamp(3.8rem, 12vw, 11.5rem)" }}
             >
-              Rivas
+              {t("hero_name_last")}
             </motion.h1>
-          </div>
+          </motion.div>
 
-          {/* Right Column: Larger Mask Reveal Photo */}
+          {/* Right Column: Larger Mask Reveal Photo with Counter-Parallax */}
           <motion.div 
+            style={{ y: photoContainerY }}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
             className="lg:col-span-5 xl:col-span-4 flex justify-start lg:justify-end"
           >
-            <div className="mr-4 relative group w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-[23rem] lg:w-[21rem] lg:h-[26rem] xl:w-[23rem] xl:h-[28rem] rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-foreground/15 shadow-2xl bg-foreground/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-emerald-500/10 hover:border-foreground/30">
+            <div className="mr-4 relative group w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-[23rem] lg:w-[21rem] lg:h-[26rem] xl:w-[23rem] xl:h-[28rem] rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-foreground/15 shadow-2xl bg-foreground/5 transition-all duration-700 hover:-translate-y-2 hover:shadow-emerald-500/10 hover:border-foreground/30">
               
               {/* Animated Curtain / Mask Reveal */}
               <motion.div
@@ -86,7 +100,7 @@ export function Hero() {
           className="md:col-span-8"
         >
           <p className="text-sm md:text-base lg:text-lg text-foreground/70 leading-relaxed max-w-xl font-medium">
-            Ingeniero de Sistemas enfocado en construir <span className="text-foreground font-semibold">arquitecturas escalables</span> y experiencias web de alto impacto.
+            {t("hero_bio")}
           </p>
         </motion.div>
 
@@ -96,9 +110,9 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="md:col-span-4 flex items-center md:justify-end gap-3 text-xs font-mono uppercase tracking-widest text-foreground/50"
         >
-          <span>Nueva Esparta, VE</span>
+          <span>{t("hero_location")}</span>
           <span>•</span>
-          <span>Full-Stack</span>
+          <span>{t("hero_stack")}</span>
         </motion.div>
       </div>
 
@@ -120,7 +134,7 @@ export function Hero() {
           />
         </div>
       </motion.div>
-    </section>
+    </motion.section>
   );
 }
 
