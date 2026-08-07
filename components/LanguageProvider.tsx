@@ -44,7 +44,7 @@ const translations: Record<Language, Record<string, string>> = {
     work_title: "Trabajo",
     
     // Project 1
-    argus_title: "Gestión de Equipos de Computación para Laboratorios",
+    argus_title: "Sistema de Gestión y Telemetría de Laboratorios UNIMAR (ARGUS)",
     argus_desc: "Plataforma integral para el control de inventario, mantenimiento y monitoreo en tiempo real de estaciones de cómputo en laboratorios universitarios.",
     argus_metric1_val: "+60%",
     argus_metric1_lbl: "Eficiencia operativa",
@@ -52,7 +52,7 @@ const translations: Record<Language, Record<string, string>> = {
     argus_metric2_lbl: "Control de inventario",
 
     // Project 2
-    admissions_title: "Sistema Automatizado de Admisiones Universitarias",
+    admissions_title: "Admisiones Guayamurí",
     admissions_desc: "Portal dinámico de alta velocidad diseñado para la gestión de aspirantes, validación de documentación y automatización de procesos de admisión.",
     admissions_metric1_val: "+80%",
     admissions_metric1_lbl: "Agilidad en trámites",
@@ -117,7 +117,7 @@ const translations: Record<Language, Record<string, string>> = {
     work_title: "Work",
 
     // Project 1
-    argus_title: "Computer Equipment Management for Laboratories",
+    argus_title: "UNIMAR Laboratory Management & Telemetry System (ARGUS)",
     argus_desc: "Comprehensive desktop application (Electron + React + FastAPI) for inventory control, maintenance, and real-time monitoring of computer stations at UNIMAR.",
     argus_metric1_val: "+60%",
     argus_metric1_lbl: "Operational efficiency",
@@ -125,7 +125,7 @@ const translations: Record<Language, Record<string, string>> = {
     argus_metric2_lbl: "Inventory control",
 
     // Project 2
-    admissions_title: "Automated Admissions System",
+    admissions_title: "Guayamurí Admissions System",
     admissions_desc: "High-speed portal designed for applicant management, document validation, and admissions workflow automation at Colegio Guayamurí.",
     admissions_metric1_val: "+33%",
     admissions_metric1_lbl: "Applicant capacity growth",
