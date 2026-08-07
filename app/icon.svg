@@ -1,0 +1,23 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with slightly rounded corners -->
+  <rect width="512" height="512" rx="112" fill="#030712" />
+  
+  <!-- Subtle Cobalt Border -->
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="#172DE2" stroke-width="8" stroke-opacity="0.5" />
+
+  <!-- Monospace Text: <R/> -->
+  <text 
+    x="50%" 
+    y="53%" 
+    font-family="Consolas, Monaco, 'Courier New', monospace" 
+    font-size="240" 
+    font-weight="900" 
+    text-anchor="middle" 
+    dominant-baseline="middle"
+    letter-spacing="-15"
+  >
+    <tspan fill="#172DE2">&lt;</tspan>
+    <tspan fill="#fafafa">R</tspan>
+    <tspan fill="#172DE2">/&gt;</tspan>
+  </text>
+</svg>
