@@ -175,7 +175,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             </div>
 
             {/* Title with Underline Animation on Hover */}
-            <Link href={`#${project.id}`} className="block group/title">
+            <Link href={`/work/${project.id}`} className="block group/title">
               <h3 className="font-display font-bold text-2xl sm:text-3xl md:text-4xl leading-tight text-foreground mb-4 relative inline-block group-hover/title:text-[var(--accent)] transition-colors duration-300">
                 {t(project.titleKey)}
                 {/* Animated underline */}
@@ -217,7 +217,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
         {/* Right Column: Image Card */}
         <motion.div style={{ y: imageY }} className="lg:col-span-6 xl:col-span-7">
-          <Link href={`#${project.id}`} className="block relative group/image">
+          <Link href={`/work/${project.id}`} className="block relative group/image">
             <div className={`relative w-full aspect-[16/10] rounded-2xl md:rounded-[2rem] overflow-hidden border border-foreground/15 shadow-xl transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-2xl group-hover:border-foreground/30 bg-gradient-to-br ${project.bgGradient} p-4 sm:p-6 md:p-8 flex items-center justify-center`}>
               
               {/* Image Mockup with Scale Effect */}

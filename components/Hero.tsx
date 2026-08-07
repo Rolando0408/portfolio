@@ -16,6 +16,7 @@ export function Hero() {
 
   return (
     <motion.section 
+      id="hero"
       style={{ opacity: heroOpacity }}
       className="relative min-h-screen flex flex-col justify-between px-6 pt-28 pb-12 md:px-12 md:py-12 overflow-hidden"
     >
