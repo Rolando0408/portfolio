@@ -76,7 +76,7 @@ export function Contact() {
     },
     {
       name: "CV (PDF)",
-      href: "#",
+      href: "/CV-Rolando-Rivas.pdf",
       icon: FileText,
     },
   ];

@@ -44,7 +44,7 @@ export function About() {
             </div>
             
             <a 
-              href="/cv.pdf" 
+              href="/CV-Rolando-Rivas.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all text-xs font-semibold tracking-widest uppercase group text-[var(--accent)]"
