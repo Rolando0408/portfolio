@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-07T16:56:00Z",
+  "title": "Design System: Portafolio Rolando Rivas",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Cobalto Eléctrico", "canonical": "#172DE2", "tonalRamp": ["#0a146b", "#0d1b94", "#1124bd", "#172DE2", "#3b4fe6", "#6877ea", "#95a0ee", "#c2c8f3"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Zinc Abisal", "canonical": "#09090b", "tonalRamp": ["#000000", "#030304", "#060607", "#09090b", "#3a3a3b", "#6b6b6b", "#9c9c9c", "#cdcdcd"] },
+      "neutral-fg": { "role": "neutral", "displayName": "Blanco Estelar", "canonical": "#fafafa", "tonalRamp": ["#252525", "#4f4f4f", "#7a7a7a", "#a4a4a4", "#cfcfcf", "#e9e9e9", "#f5f5f5", "#fafafa"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Titulares (Outfit)", "purpose": "Titulares contundentes y jerárquicos." },
+      "body": { "displayName": "Cuerpo (Inter)", "purpose": "Texto descriptivo altamente legible." }
+    },
+    "shadows": [
+      { "name": "hover-lift", "value": "0 25px 50px -12px rgba(0, 0, 0, 0.25)", "purpose": "Elevación dramática al hacer hover en tarjetas." }
+    ],
+    "motion": [
+      { "name": "premium-transition", "value": "cubic-bezier(0.4, 0, 0.2, 1) 500ms", "purpose": "Transición suave y lenta para hover states." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón Outline (Pill)",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "El estilo principal para acciones, filtros y navegación.",
+      "html": "<button class=\"ds-btn-outline\">VER PROYECTO</button>",
+      "css": ".ds-btn-outline { background: transparent; color: #172DE2; padding: 12px 24px; border: 1px solid #172DE2; border-radius: 9999px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.3s ease; cursor: pointer; } .ds-btn-outline:hover { background: #172DE2; color: #fafafa; transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(23, 45, 226, 0.2); }"
+    },
+    {
+      "name": "Tarjeta de Proyecto",
+      "kind": "card",
+      "refersTo": "card-container",
+      "description": "Contenedor interactivo para mostrar proyectos.",
+      "html": "<div class=\"ds-card\">\n  <div class=\"ds-card-img\"></div>\n  <div class=\"ds-card-content\">\n    <h3>Proyecto Awesome</h3>\n    <p>Descripción corta técnica y directa al grano.</p>\n  </div>\n</div>",
+      "css": ".ds-card { background: rgba(250, 250, 250, 0.02); border: 1px solid rgba(250, 250, 250, 0.15); border-radius: 24px; padding: 24px; color: #fafafa; font-family: 'Inter', sans-serif; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; display: flex; flex-direction: column; gap: 16px; } .ds-card:hover { border-color: rgba(250, 250, 250, 0.3); transform: translateY(-6px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); background: rgba(250, 250, 250, 0.05); } .ds-card-img { width: 100%; height: 150px; background: #09090b; border-radius: 12px; } .ds-card-content h3 { font-family: 'Outfit', sans-serif; margin: 0 0 8px 0; font-size: 24px; letter-spacing: -0.025em; } .ds-card-content p { margin: 0; color: rgba(250, 250, 250, 0.7); font-size: 14px; }"
+    },
+    {
+      "name": "Tag Técnico",
+      "kind": "chip",
+      "refersTo": "tech-tag",
+      "description": "Etiqueta para lenguajes o tecnologías (React, Node).",
+      "html": "<span class=\"ds-tag\">REACT</span>",
+      "css": ".ds-tag { background: rgba(250, 250, 250, 0.05); border: 1px solid rgba(250, 250, 250, 0.1); color: rgba(250, 250, 250, 0.8); padding: 4px 12px; border-radius: 9999px; font-family: ui-monospace, monospace; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; transition: all 0.3s ease; display: inline-flex; } .ds-tag:hover { border-color: rgba(250, 250, 250, 0.3); color: #fafafa; background: rgba(250, 250, 250, 0.1); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Canvas Cyber-Técnico",
+    "overview": "Minimalismo crudo, tipografía contundente y fluidez absoluta. Todo está en reposo hasta que la interacción despierta la interfaz con transiciones hiper-pulidas y brillos de acento. El sistema actúa como un lienzo oscuro y altamente optimizado que permite que las proezas de ingeniería (animaciones avanzadas, cursores dinámicos, scroll suave) hablen por sí solas.",
+    "keyCharacteristics": [
+      "Oscuridad Estructural: Uso casi absoluto del Zinc Abisal como fondo, permitiendo que los elementos interactivos resalten.",
+      "Interacción como Recompensa: Los elementos son planos y tenues por defecto, pero revelan bordes luminosos y sombras al hacer hover.",
+      "Micro-interacciones Fluidas: Nada es estático; cada botón, tarjeta o enlace tiene una transición cuidadosamente orquestada."
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "El Cobalto Eléctrico se usa en ≤10% de cualquier vista. Su rareza es lo que le otorga el poder de guiar el ojo humano de manera efectiva.", "section": "colors" },
+      { "name": "The Technical Monospace Rule", "body": "Los metadatos, tags y elementos de interfaz de usuario de bajo nivel utilizan fuentes monoespaciadas y en mayúsculas para reforzar el aura de 'herramienta de desarrollador'.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Superficies planas en reposo. Los elementos descansan con bordes sutiles de baja opacidad (foreground/15), pero al interactuar se elevan utilizando sombras fuertes (shadow-2xl), glows de acento y bordes marcados.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar opacidades sobre el Blanco Estelar (foreground/70, foreground/40) para crear jerarquía textual en lugar de colores grises planos.",
+      "Do incluir transiciones de larga duración (duration-300, duration-500, duration-700) en transformaciones de tarjetas para lograr una sensación premium.",
+      "Do mantener el fondo de la página limpio (bg-[var(--background)]) usando orbes/gradientes desenfocados como textura sutil."
+    ],
+    "donts": [
+      "Don't aplicar el Cobalto Eléctrico a fondos grandes o contenedores enteros; debe reservarse para contornos, texto e iconos.",
+      "Don't usar sombras duras o sin desenfoque amplio; todas las sombras deben sentirse como fuentes de luz difusas (shadow-2xl)."
+    ]
+  }
+}
