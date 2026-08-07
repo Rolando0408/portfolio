@@ -76,6 +76,13 @@ const translations: Record<Language, Record<string, string>> = {
     about_exp3_role: "Frontend Developer",
     about_exp3_date: "2018 - 2020",
     about_skills_title: "HABILIDADES",
+
+    // Contact Section
+    contact_label: "¿TIENES UN PROYECTO EN MENTE?",
+    contact_heading: "HABLEMOS",
+    contact_subheading: "Haz clic en el correo para copiarlo al portapapeles o conéctate en redes.",
+    contact_copied: "¡Copiado al portapapeles!",
+    contact_rights: "Todos los derechos reservados.",
   },
   en: {
     // Navbar
@@ -141,6 +148,13 @@ const translations: Record<Language, Record<string, string>> = {
     about_exp3_role: "Frontend Developer",
     about_exp3_date: "2018 - 2020",
     about_skills_title: "SKILLS",
+
+    // Contact Section
+    contact_label: "HAVE A PROJECT IN MIND?",
+    contact_heading: "LET'S TALK",
+    contact_subheading: "Click the email to copy it to clipboard or connect on social media.",
+    contact_copied: "Copied to clipboard!",
+    contact_rights: "All rights reserved.",
   },
 };
 
