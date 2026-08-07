@@ -101,7 +101,7 @@ export function Work() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-foreground/50 mb-3">
+            <p className="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-[var(--accent)] mb-3">
               {t("work_label")}
             </p>
             <h2 className="font-display font-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-foreground">
@@ -166,11 +166,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           <div>
             {/* Number & Meta */}
             <div className="flex items-center gap-4 mb-6">
-              <span className="font-mono text-xs md:text-sm font-semibold text-foreground/40">
+              <span className="font-mono text-xs md:text-sm font-semibold text-[var(--accent)]">
                 {project.number}
               </span>
               <span className="w-1 h-1 rounded-full bg-foreground/20" />
-              <span className="font-mono text-xs md:text-sm uppercase tracking-wider text-foreground/50">
+              <span className="font-mono text-xs md:text-sm uppercase tracking-wider text-[var(--accent)]">
                 {project.meta}
               </span>
             </div>
@@ -208,7 +208,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 <span className="block font-display font-black text-2xl md:text-3xl text-foreground transition-colors duration-300 delay-75">
                   <MetricCounter valString={t(metric.valueKey)} />
                 </span>
-                <span className="block text-[11px] md:text-xs font-mono text-foreground/50 uppercase tracking-wider mt-1">
+                <span className="block text-[11px] md:text-xs font-mono text-[var(--accent)] uppercase tracking-wider mt-1">
                   {t(metric.labelKey)}
                 </span>
               </div>

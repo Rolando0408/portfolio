@@ -24,7 +24,7 @@ export function About() {
       <div className="max-w-[1400px] mx-auto">
         {/* Section Header */}
         <motion.div style={{ y: titleY }} className="mb-24 md:mb-32 flex flex-col md:flex-row md:items-start gap-4 relative z-0 pointer-events-none">
-          <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-foreground/50 uppercase mt-4 md:w-32 shrink-0">
+          <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[var(--accent)] uppercase mt-4 md:w-32 shrink-0">
             {t("about_label")}
           </span>
           <h2 className="text-[3.5rem] sm:text-[5rem] md:text-[8rem] lg:text-[11rem] font-display font-black leading-[0.9] tracking-tighter uppercase text-foreground">
@@ -57,7 +57,7 @@ export function About() {
             
             {/* Experience Section */}
             <div>
-              <h3 className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-foreground/50 uppercase mb-8">
+              <h3 className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[var(--accent)] uppercase mb-8">
                 {t("about_exp_title")}
               </h3>
               <div className="flex flex-col">
@@ -82,7 +82,7 @@ export function About() {
 
             {/* Skills Section */}
             <div>
-              <h3 className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-foreground/50 uppercase mb-8">
+              <h3 className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[var(--accent)] uppercase mb-8">
                 {t("about_skills_title")}
               </h3>
               <div className="flex flex-wrap gap-2 md:gap-3">
@@ -115,7 +115,7 @@ function ExperienceItem({ company, role, date, isFirst = false }: { company: str
         <h4 className="text-base md:text-lg font-medium text-foreground mb-1 group-hover:text-foreground transition-colors">{company}</h4>
         <p className="text-sm text-foreground/60">{role}</p>
       </div>
-      <span className="text-[10px] md:text-xs text-foreground/50 tracking-wider mt-1.5 shrink-0 whitespace-nowrap">{date}</span>
+      <span className="text-[10px] md:text-xs text-[var(--accent)] tracking-wider mt-1.5 shrink-0 whitespace-nowrap">{date}</span>
     </div>
   );
 }

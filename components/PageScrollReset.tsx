@@ -17,7 +17,7 @@ export function PageScrollReset() {
       // If there's an anchor like #work or #contact, scroll to it directly using selector string
       lenis.scrollTo(hash, { immediate: true });
     }
-  }, []);
+  }, [lenis]);
 
   return null;
 }

@@ -188,10 +188,10 @@ export function BackgroundParticles() {
   return (
     <div ref={containerRef} className="fixed inset-0 overflow-hidden pointer-events-none z-[-1]">
        <div 
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full opacity-[0.03] dark:opacity-[0.05]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full opacity-[0.06] dark:opacity-[0.12]"
         style={{
           background: "radial-gradient(circle, var(--accent) 0%, transparent 70%)",
-          filter: "blur(100px)",
+          filter: "blur(120px)",
         }}
       />
       <canvas key="canvas-v2" ref={canvasRef} className="block w-full h-full opacity-60 dark:opacity-80 transition-opacity duration-1000" />

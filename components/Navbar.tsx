@@ -93,13 +93,13 @@ export function Navbar() {
         
         {/* Content Layer - Right */}
         <div className="relative z-10 flex items-center gap-4 md:gap-6 text-xs font-medium tracking-widest text-foreground/70">
-          <a href="#work" onClick={(e) => handleScrollTo(e, "#work")} className="hover:text-foreground py-2 transition-colors duration-300 hidden md:block cursor-pointer">
+          <a href="#work" onClick={(e) => handleScrollTo(e, "#work")} className="hover:text-[var(--accent)] py-2 transition-colors duration-300 hidden md:block cursor-pointer">
             {t("nav_work")}
           </a>
-          <a href="#about" onClick={(e) => handleScrollTo(e, "#about")} className="hover:text-foreground py-2 transition-colors duration-300 hidden md:block cursor-pointer">
+          <a href="#about" onClick={(e) => handleScrollTo(e, "#about")} className="hover:text-[var(--accent)] py-2 transition-colors duration-300 hidden md:block cursor-pointer">
             {t("nav_about")}
           </a>
-          <a href="#contact" onClick={(e) => handleScrollTo(e, "#contact")} className="hover:text-foreground py-2 transition-colors duration-300 hidden md:block cursor-pointer">
+          <a href="#contact" onClick={(e) => handleScrollTo(e, "#contact")} className="hover:text-[var(--accent)] py-2 transition-colors duration-300 hidden md:block cursor-pointer">
             {t("nav_contact")}
           </a>
 

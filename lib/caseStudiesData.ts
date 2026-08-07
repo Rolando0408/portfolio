@@ -132,7 +132,7 @@ export const caseStudiesData: Record<"es" | "en", Record<string, CaseStudyData>>
       role: "Desarrollador Full-Stack FrontEnd",
       timeline: "2025 - 2026",
       client: "Colegio Guayamurí",
-      heroImage: "/admissions.png",
+      heroImage: "/DashboardG.png",
       bgGradient: "from-blue-950/40 via-zinc-900/60 to-zinc-950",
       tags: ["REACT", "VITE", "TAILWIND CSS", "SHADCN/UI", "FASTAPI", "PYTHON", "POSTGRESQL", "AWS S3", "DOCKER"],
       metrics: [

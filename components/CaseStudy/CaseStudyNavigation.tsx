@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, Globe } from "lucide-react";
+import { ArrowLeft, Globe, Sun, Moon } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
+import { useTheme } from "next-themes";
 
 interface CaseStudyNavigationProps {
   currentId: string;
@@ -11,6 +12,12 @@ interface CaseStudyNavigationProps {
 
 export function CaseStudyNavigation({ currentId }: CaseStudyNavigationProps) {
   const { lang, toggleLang } = useLanguage();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const nextProjectId = currentId === "argus" ? "admissions" : "argus";
   const nextProjectLabel = currentId === "argus" ? "Admissions Portal" : "ARGUS System";
@@ -39,10 +46,25 @@ export function CaseStudyNavigation({ currentId }: CaseStudyNavigationProps) {
 
           <button
             onClick={toggleLang}
-            className="flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full border border-foreground/15 bg-background/80 backdrop-blur-md text-xs font-mono tracking-wider uppercase text-foreground hover:border-[var(--accent)] active:scale-[0.98] transition-all shadow-md cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2.5 min-h-[44px] min-w-[75px] rounded-full border border-foreground/15 bg-background/80 backdrop-blur-md text-xs font-mono tracking-wider uppercase text-foreground hover:border-[var(--accent)] active:scale-[0.98] transition-all shadow-md cursor-pointer justify-center"
           >
             <Globe className="w-3.5 h-3.5 text-[var(--accent)]" />
             <span className="font-bold">{lang.toUpperCase()}</span>
+          </button>
+
+          <button 
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="flex items-center gap-2 px-4 py-2.5 min-h-[44px] min-w-[75px] rounded-full border border-foreground/15 bg-background/80 backdrop-blur-md hover:bg-foreground/10 transition-all text-[11px] tracking-wider text-foreground font-mono shadow-md justify-center"
+            aria-label="Toggle Theme"
+          >
+            {mounted ? (
+              <>
+                {theme === 'dark' ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
+                <span>{theme === 'dark' ? 'LIGHT' : 'DARK'}</span>
+              </>
+            ) : (
+              <span className="w-3.5 h-3.5" />
+            )}
           </button>
         </div>
       </div>

@@ -92,7 +92,7 @@ export function Contact() {
         {/* Section Header */}
         <div>
           <motion.div style={{ y: titleY }} className="flex flex-col md:flex-row md:items-start gap-4 mb-12 md:mb-16 relative z-0 pointer-events-none">
-            <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-foreground/50 uppercase mt-4 md:w-48 shrink-0">
+            <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-[var(--accent)] uppercase mt-4 md:w-48 shrink-0">
               {t("contact_label")}
             </span>
             <h2 className="text-[3.5rem] sm:text-[6rem] md:text-[9rem] lg:text-[13rem] font-display font-black leading-[0.9] tracking-tighter uppercase text-foreground select-none">
@@ -108,7 +108,7 @@ export function Contact() {
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
                 <div>
-                  <span className="text-xs uppercase tracking-widest text-foreground/50 font-mono block mb-2">
+                  <span className="text-xs uppercase tracking-widest text-[var(--accent)] font-mono block mb-2">
                     {t("contact_subheading")}
                   </span>
                   <span className="text-[15px] sm:text-2xl md:text-3xl lg:text-4xl font-mono font-medium tracking-tight text-foreground group-hover:text-[var(--accent)] transition-colors break-all">
@@ -166,7 +166,7 @@ export function Contact() {
             })}
           </div>
 
-          <div className="text-xs font-mono text-foreground/40 flex items-center gap-2">
+          <div className="text-xs font-mono text-[var(--accent)] flex items-center gap-2">
             <span>© {new Date().getFullYear()} Rolando Rivas.</span>
             <span>{t("contact_rights")}</span>
           </div>

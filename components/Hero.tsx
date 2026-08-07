@@ -12,7 +12,6 @@ export function Hero() {
   // Scroll interactive parallax effects
   const titleY = useTransform(scrollY, [0, 800], [0, 200]); // Más profundidad
   const photoContainerY = useTransform(scrollY, [0, 800], [0, -100]); // Sube el contenedor
-  const photoInnerY = useTransform(scrollY, [0, 800], ["-10%", "10%"]); // Parallax interno de la imagen
   const heroOpacity = useTransform(scrollY, [0, 600], [1, 0]);
 
   return (
@@ -28,7 +27,7 @@ export function Hero() {
         transition={{ duration: 1, delay: 0.2 }}
         className="mt-12 md:mt-16"
       >
-        <p className="text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-foreground/50">
+        <p className="text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent)]">
           {t("hero_role")}
         </p>
       </motion.div>
@@ -110,8 +109,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="md:col-span-4 flex items-center md:justify-end gap-3 text-xs font-mono uppercase tracking-widest text-foreground/50"
+          className="md:col-span-4 flex items-center md:justify-end gap-3 text-xs font-mono uppercase tracking-widest text-[var(--accent)]"
         >
+          <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
+          {t("hero_availability")}
           <span>{t("hero_location")}</span>
           <span>•</span>
           <span>{t("hero_stack")}</span>

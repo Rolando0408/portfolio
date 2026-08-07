@@ -11,15 +11,15 @@
 
 @layer base {
   :root {
-    --background: #f4f4f5; /* Light zinc */
-    --foreground: #09090b; /* Dark zinc */
-    --accent: #172DE2; 
+    --background: #f1f5f9; /* Slate 100 - Cool light gray */
+    --foreground: #020617; /* Slate 950 - Deep navy black */
+    --accent: #172DE2; /* Cobalt Blue */
   }
   
   .dark {
-    --background: #09090b;
-    --foreground: #fafafa;
-    --accent: #172DE2;
+    --background: #030712; /* Slate 950/Black - Deep ocean space */
+    --foreground: #f8fafc; /* Slate 50 - Crisp cool white */
+    --accent: #172DE2; /* Cobalt Blue */
   }
 }
 
