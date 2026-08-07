@@ -90,30 +90,27 @@ export function Contact() {
       <div className="max-w-[1400px] mx-auto flex flex-col justify-between min-h-[70vh]">
         {/* Section Header */}
         <div>
-          <div className="flex flex-col md:flex-row md:items-start gap-4 mb-12 md:mb-16">
+          <motion.div style={{ y: titleY }} className="flex flex-col md:flex-row md:items-start gap-4 mb-12 md:mb-16 relative z-0 pointer-events-none">
             <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-foreground/50 uppercase mt-4 md:w-48 shrink-0">
               {t("contact_label")}
             </span>
-            <motion.h2
-              style={{ y: titleY }}
-              className="text-[5.5rem] sm:text-[8rem] md:text-[11rem] lg:text-[14rem] font-display font-black leading-[0.85] tracking-tighter uppercase text-foreground select-none"
-            >
+            <h2 className="text-[3.5rem] sm:text-[6rem] md:text-[9rem] lg:text-[13rem] font-display font-black leading-[0.9] tracking-tighter uppercase text-foreground select-none">
               {t("contact_heading")}
-            </motion.h2>
-          </div>
+            </h2>
+          </motion.div>
 
           {/* Email Trigger Box */}
-          <div className="mt-8 md:mt-16 group relative inline-block w-full max-w-4xl">
+          <div className="mt-8 md:mt-16 group relative inline-block w-full max-w-4xl z-20">
             <button
               onClick={handleCopyEmail}
-              className="w-full text-left p-6 md:p-10 rounded-2xl md:rounded-3xl border border-foreground/15 bg-foreground/[0.02] hover:bg-foreground/[0.05] hover:border-[var(--accent)] transition-all duration-300 relative overflow-hidden backdrop-blur-sm cursor-pointer"
+              className="w-full text-left p-6 md:p-10 rounded-2xl md:rounded-3xl border border-foreground/15 bg-foreground/[0.02] hover:bg-foreground/[0.05] hover:border-[var(--accent)] active:scale-[0.98] active:border-[var(--accent)] transition-all duration-300 relative overflow-hidden backdrop-blur-sm cursor-pointer"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
                 <div>
                   <span className="text-xs uppercase tracking-widest text-foreground/50 font-mono block mb-2">
                     {t("contact_subheading")}
                   </span>
-                  <span className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-mono font-medium tracking-tight text-foreground group-hover:text-[var(--accent)] transition-colors break-all">
+                  <span className="text-[15px] sm:text-2xl md:text-3xl lg:text-4xl font-mono font-medium tracking-tight text-foreground group-hover:text-[var(--accent)] transition-colors break-all">
                     {email}
                   </span>
                 </div>
@@ -158,7 +155,7 @@ export function Contact() {
                   href={link.href}
                   target={link.href !== "#" ? "_blank" : undefined}
                   rel={link.href !== "#" ? "noopener noreferrer" : undefined}
-                  className="group flex items-center gap-2 px-4 py-2.5 rounded-full border border-foreground/10 hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all text-xs font-mono font-medium tracking-wide uppercase text-foreground/80 hover:bg-foreground/[0.03]"
+                  className="group flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full border border-foreground/10 hover:border-[var(--accent)] hover:text-[var(--accent)] active:bg-foreground/[0.05] active:scale-[0.98] transition-all text-xs font-mono font-medium tracking-wide uppercase text-foreground/80 hover:bg-foreground/[0.03]"
                 >
                   <Icon className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
                   <span>{link.name}</span>

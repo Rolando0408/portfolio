@@ -34,8 +34,8 @@
   }
 }
 
-/* Hide default cursor on desktop when custom cursor is active */
-@media (pointer: fine) {
+/* Hide default cursor on desktop when custom cursor is active, but respect accessibility settings */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
   body, a, button, input, textarea, select, [role="button"], .cursor-pointer {
     cursor: none !important;
   }

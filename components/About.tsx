@@ -22,20 +22,17 @@ export function About() {
     <section ref={ref} id="about" className="relative py-24 md:py-32 px-4 md:px-8 border-t border-foreground/10 overflow-hidden">
       <div className="max-w-[1400px] mx-auto">
         {/* Section Header */}
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-start gap-4">
+        <motion.div style={{ y: titleY }} className="mb-24 md:mb-32 flex flex-col md:flex-row md:items-start gap-4 relative z-0 pointer-events-none">
           <span className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-foreground/50 uppercase mt-4 md:w-32 shrink-0">
             {t("about_label")}
           </span>
-          <motion.h2 
-            style={{ y: titleY }}
-            className="text-[5rem] md:text-[8rem] lg:text-[11rem] font-display font-black leading-[0.85] tracking-tighter uppercase text-foreground"
-          >
+          <h2 className="text-[3.5rem] sm:text-[5rem] md:text-[8rem] lg:text-[11rem] font-display font-black leading-[0.9] tracking-tighter uppercase text-foreground">
             {t("about_title")}
-          </motion.h2>
-        </div>
+          </h2>
+        </motion.div>
 
         {/* Content Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-20">
           
           {/* Left Column: Summary & CV Button */}
           <div className="lg:col-span-6 xl:col-span-5 lg:col-start-1">
@@ -47,7 +44,7 @@ export function About() {
               href="/CV-Rolando-Rivas.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition-all text-xs font-semibold tracking-widest uppercase group text-[var(--accent)]"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] rounded-full border border-[var(--accent)] hover:bg-[var(--accent)] hover:text-white active:bg-[var(--accent)] active:text-white active:scale-[0.98] transition-all text-xs font-semibold tracking-widest uppercase group text-[var(--accent)]"
             >
               {t("about_cv")}
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -95,7 +92,7 @@ export function About() {
                 ].map((skill, index) => (
                   <span 
                     key={index}
-                    className="px-4 py-2 rounded-full border border-foreground/15 text-xs md:text-sm text-foreground/70 bg-foreground/5 hover:bg-[var(--accent)] hover:text-white hover:border-[var(--accent)] transition-colors cursor-default whitespace-nowrap shadow-sm"
+                    className="px-4 py-2 min-h-[44px] rounded-full border border-foreground/15 text-xs md:text-sm text-foreground/70 bg-foreground/5 hover:bg-[var(--accent)] hover:text-white hover:border-[var(--accent)] active:bg-[var(--accent)] active:text-white active:scale-[0.98] transition-all cursor-default whitespace-nowrap shadow-sm flex items-center justify-center"
                   >
                     {skill}
                   </span>
@@ -112,7 +109,7 @@ export function About() {
 
 function ExperienceItem({ company, role, date, isFirst = false }: { company: string, role: string, date: string, isFirst?: boolean }) {
   return (
-    <div className={`py-6 flex items-start justify-between gap-4 border-b border-foreground/10 ${isFirst ? 'border-t' : ''} group hover:bg-foreground/[0.02] transition-colors -mx-4 px-4 rounded-xl`}>
+    <div className={`py-6 flex items-start justify-between gap-4 border-b border-foreground/10 ${isFirst ? 'border-t' : ''} group hover:bg-foreground/[0.02] active:bg-foreground/[0.04] active:scale-[0.99] transition-all -mx-4 px-4 rounded-xl cursor-pointer`} onClick={() => {}}>
       <div>
         <h4 className="text-base md:text-lg font-medium text-foreground mb-1 group-hover:text-foreground transition-colors">{company}</h4>
         <p className="text-sm text-foreground/60">{role}</p>

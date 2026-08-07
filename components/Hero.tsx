@@ -66,7 +66,7 @@ export function Hero() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
             className="lg:col-span-5 xl:col-span-4 flex justify-start lg:justify-end"
           >
-            <div className="mr-4 relative group w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-[23rem] lg:w-[21rem] lg:h-[26rem] xl:w-[23rem] xl:h-[28rem] rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-foreground/15 shadow-2xl bg-foreground/5 transition-all duration-700 hover:-translate-y-2 hover:shadow-emerald-500/10 hover:border-foreground/30">
+            <div className="mr-4 relative group w-56 h-72 sm:w-64 sm:h-80 md:w-72 md:h-[23rem] lg:w-[21rem] lg:h-[26rem] xl:w-[23rem] xl:h-[28rem] rounded-2xl md:rounded-[2.5rem] overflow-hidden border border-foreground/15 shadow-2xl bg-foreground/5 transition-all duration-700 hover:-translate-y-2 hover:shadow-emerald-500/10 hover:border-foreground/30 active:scale-[0.98]">
               
               {/* Animated Curtain / Mask Reveal */}
               <motion.div

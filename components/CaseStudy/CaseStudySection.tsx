@@ -21,7 +21,7 @@ export function CaseStudySection({ section, index }: CaseStudySectionProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="lg:col-span-5 sticky top-28"
+            className="lg:col-span-5 lg:sticky lg:top-28 relative z-10"
           >
             <span className="font-mono text-xs font-semibold tracking-[0.2em] text-[var(--accent)] uppercase mb-3 block">
               SECTION 0{index + 1}

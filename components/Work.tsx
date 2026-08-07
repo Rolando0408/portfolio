@@ -84,7 +84,7 @@ export function Work() {
         { valueKey: "admissions_metric1_val", labelKey: "admissions_metric1_lbl" },
         { valueKey: "admissions_metric2_val", labelKey: "admissions_metric2_lbl" },
       ],
-      image: "/admissions.png",
+      image: "/DashboardG.png",
       bgGradient: "from-blue-950/20 to-zinc-900/40",
     },
   ];
@@ -217,7 +217,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
         {/* Right Column: Image Card */}
         <motion.div style={{ y: imageY }} className="lg:col-span-6 xl:col-span-7">
-          <Link href={`/work/${project.id}`} className="block relative group/image">
+          <Link href={`/work/${project.id}`} className="block relative group/image active:scale-[0.98] transition-transform duration-300">
             <div className={`relative w-full aspect-[16/10] rounded-2xl md:rounded-[2rem] overflow-hidden border border-foreground/15 shadow-xl transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-2xl group-hover:border-foreground/30 bg-gradient-to-br ${project.bgGradient} p-4 sm:p-6 md:p-8 flex items-center justify-center`}>
               
               {/* Image Mockup with Scale Effect */}

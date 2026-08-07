@@ -58,27 +58,27 @@ export function BackgroundOrbs() {
         ref={orb1Ref}
         className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] max-w-[500px] max-h-[500px] rounded-full opacity-40 md:opacity-20 will-change-transform"
         style={{
-          background: "radial-gradient(circle, var(--accent) 0%, rgba(23,45,226,0) 70%)",
+          background: "radial-gradient(circle, var(--accent) 0%, transparent 70%)",
           filter: "blur(60px)",
         }}
       />
       
-      {/* Orbe 2 - Cian / Azul más claro */}
+      {/* Orbe 2 - Blanco Estelar con muy baja opacidad para dar volumen sutil */}
       <div 
         ref={orb2Ref}
         className="absolute top-1/3 right-1/4 w-[35vw] h-[35vw] max-w-[400px] max-h-[400px] rounded-full opacity-30 md:opacity-15 will-change-transform"
         style={{
-          background: "radial-gradient(circle, #00d2ff 0%, rgba(0,210,255,0) 70%)",
+          background: "radial-gradient(circle, color-mix(in srgb, var(--foreground) 15%, transparent) 0%, transparent 70%)",
           filter: "blur(50px)",
         }}
       />
 
-      {/* Orbe 3 - Púrpura / Oscuro profundo para contraste */}
+      {/* Orbe 3 - Acento muy diluido para la esquina opuesta */}
       <div 
         ref={orb3Ref}
         className="absolute bottom-1/4 left-1/3 w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] rounded-full opacity-20 md:opacity-10 will-change-transform"
         style={{
-          background: "radial-gradient(circle, #8a2be2 0%, rgba(138,43,226,0) 70%)",
+          background: "radial-gradient(circle, color-mix(in srgb, var(--accent) 30%, transparent) 0%, transparent 70%)",
           filter: "blur(80px)",
         }}
       />

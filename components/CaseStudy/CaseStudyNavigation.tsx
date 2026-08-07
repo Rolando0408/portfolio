@@ -21,7 +21,7 @@ export function CaseStudyNavigation({ currentId }: CaseStudyNavigationProps) {
         {/* Back Button */}
         <Link
           href="/#hero"
-          className="group flex items-center gap-2 px-4 py-2.5 rounded-full border border-foreground/15 bg-background/80 backdrop-blur-md text-xs font-mono tracking-wider uppercase text-foreground hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all shadow-md"
+          className="group flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full border border-foreground/15 bg-background/80 backdrop-blur-md text-xs font-mono tracking-wider uppercase text-foreground hover:border-[var(--accent)] hover:text-[var(--accent)] active:scale-[0.98] transition-all shadow-md"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
           <span>{lang === "es" ? "VOLVER AL PORTAFOLIO" : "BACK TO HOME"}</span>
@@ -31,7 +31,7 @@ export function CaseStudyNavigation({ currentId }: CaseStudyNavigationProps) {
         <div className="flex items-center gap-3">
           <Link
             href={`/work/${nextProjectId}`}
-            className="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-full border border-foreground/15 bg-background/80 backdrop-blur-md text-xs font-mono tracking-wider uppercase text-foreground/80 hover:text-foreground hover:border-foreground/30 transition-all shadow-md"
+            className="hidden sm:flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full border border-foreground/15 bg-background/80 backdrop-blur-md text-xs font-mono tracking-wider uppercase text-foreground/80 hover:text-foreground hover:border-foreground/30 active:scale-[0.98] transition-all shadow-md"
           >
             <span className="text-foreground/40">{lang === "es" ? "SIGUIENTE:" : "NEXT:"}</span>
             <span className="font-semibold text-foreground">{nextProjectLabel}</span>
@@ -39,7 +39,7 @@ export function CaseStudyNavigation({ currentId }: CaseStudyNavigationProps) {
 
           <button
             onClick={toggleLang}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-foreground/15 bg-background/80 backdrop-blur-md text-xs font-mono tracking-wider uppercase text-foreground hover:border-[var(--accent)] transition-all shadow-md cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full border border-foreground/15 bg-background/80 backdrop-blur-md text-xs font-mono tracking-wider uppercase text-foreground hover:border-[var(--accent)] active:scale-[0.98] transition-all shadow-md cursor-pointer"
           >
             <Globe className="w-3.5 h-3.5 text-[var(--accent)]" />
             <span className="font-bold">{lang.toUpperCase()}</span>
