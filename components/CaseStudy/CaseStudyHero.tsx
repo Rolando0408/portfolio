@@ -122,9 +122,9 @@ export function CaseStudyHero({ data }: CaseStudyHeroProps) {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.5 }}
-          className={`relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl md:rounded-3xl overflow-hidden border border-foreground/15 shadow-2xl bg-gradient-to-br ${data.bgGradient} p-4 md:p-8`}
+          className={`relative w-full max-w-5xl mx-auto aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden border border-foreground/15 shadow-2xl bg-gradient-to-br ${data.bgGradient} p-2 sm:p-4 md:p-6 lg:p-8`}
         >
-          <div className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-2xl bg-background">
             <Image
               src={data.heroImage}
               alt={data.title}

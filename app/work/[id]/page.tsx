@@ -39,7 +39,7 @@ export default function CaseStudyPage() {
   const nextProjectTitle = id === "argus" ? "Portal de Admisiones" : "Sistema ARGUS";
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground selection:bg-[var(--accent)] selection:text-white">
+    <main className="relative min-h-screen text-foreground selection:bg-[var(--accent)] selection:text-white">
       {/* Floating Header */}
       <CaseStudyNavigation currentId={id} />
 

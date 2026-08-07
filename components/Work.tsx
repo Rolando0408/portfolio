@@ -65,21 +65,21 @@ export function Work() {
       meta: "ARGUS System / 2025",
       titleKey: "argus_title",
       descKey: "argus_desc",
-      tags: ["FASTAPI", "REACT", "POSTGRESQL", "DOCKER"],
+      tags: ["ELECTRON", "REACT", "FASTAPI", "DOCKER"],
       metrics: [
         { valueKey: "argus_metric1_val", labelKey: "argus_metric1_lbl" },
         { valueKey: "argus_metric2_val", labelKey: "argus_metric2_lbl" },
       ],
-      image: "/argus.png",
+      image: "/Portada-Argus.png",
       bgGradient: "from-emerald-950/20 to-zinc-900/40",
     },
     {
       id: "admissions",
       number: "02",
-      meta: "Admission Portal / 2025",
+      meta: "Admission Portal / 2026",
       titleKey: "admissions_title",
       descKey: "admissions_desc",
-      tags: ["NEXT.JS", "TYPESCRIPT", "TAILWIND CSS", "SUPABASE"],
+      tags: ["REACT", "VITE", "FASTAPI", "DOCKER"],
       metrics: [
         { valueKey: "admissions_metric1_val", labelKey: "admissions_metric1_lbl" },
         { valueKey: "admissions_metric2_val", labelKey: "admissions_metric2_lbl" },
@@ -226,7 +226,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                   src={project.image}
                   alt={t(project.titleKey)}
                   fill
-                  className="object-cover transition-transform duration-700 ease-out group-hover/image:scale-105"
+                  className="object-contain transition-transform duration-700 ease-out group-hover/image:scale-105"
                   sizes="(max-width: 1024px) 100vw, 55vw"
                 />
                 <div className="absolute inset-0 bg-background/10 group-hover/image:bg-transparent transition-colors duration-500" />

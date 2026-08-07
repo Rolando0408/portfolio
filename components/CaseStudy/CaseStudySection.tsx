@@ -93,6 +93,7 @@ export function CaseStudySection({ section, index }: CaseStudySectionProps) {
               <CaseStudyImageGrid
                 count={section.imagePlaceholderCount}
                 cols={section.imageGridCols}
+                images={section.images}
               />
             )}
           </motion.div>
