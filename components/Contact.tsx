@@ -85,7 +85,7 @@ export function Contact() {
     <section
       ref={ref}
       id="contact"
-      className="relative pt-24 pb-12 md:pt-32 md:pb-16 px-4 md:px-8 border-t border-foreground/10 overflow-hidden bg-background"
+      className="relative pt-24 pb-12 md:pt-32 md:pb-16 px-4 md:px-8 border-t border-foreground/10 overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto flex flex-col justify-between min-h-[70vh]">
         {/* Section Header */}

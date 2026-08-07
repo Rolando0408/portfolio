@@ -34,6 +34,13 @@
   }
 }
 
+/* Hide default cursor on desktop when custom cursor is active */
+@media (pointer: fine) {
+  body, a, button, input, textarea, select, [role="button"], .cursor-pointer {
+    cursor: none !important;
+  }
+}
+
 @keyframes marquee {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
