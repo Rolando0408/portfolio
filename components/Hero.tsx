@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import { useLanguage } from "@/components/LanguageProvider";
+import { ScrambleText } from "@/components/ScrambleText";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -45,7 +46,7 @@ export function Hero() {
               className="font-display font-black leading-[0.88] tracking-tighter uppercase text-foreground"
               style={{ fontSize: "clamp(3.8rem, 12vw, 11.5rem)" }}
             >
-              {t("hero_name_first")}
+              <ScrambleText text={t("hero_name_first")} duration={1.2} delay={0.4} />
             </motion.h1>
             <motion.h1 
               initial={{ opacity: 0, y: 40 }}
@@ -54,7 +55,7 @@ export function Hero() {
               className="font-display font-black leading-[0.88] tracking-tighter uppercase text-foreground"
               style={{ fontSize: "clamp(3.8rem, 12vw, 11.5rem)" }}
             >
-              {t("hero_name_last")}
+              <ScrambleText text={t("hero_name_last")} duration={1.2} delay={0.6} />
             </motion.h1>
           </motion.div>
 

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
+import { ScrambleText } from "@/components/ScrambleText";
 
 function parseMetricString(str: string) {
   const match = str.match(/^([^0-9]*)([0-9,.]+)([^0-9]*)$/);
@@ -104,7 +105,7 @@ export function Work() {
               {t("work_label")}
             </p>
             <h2 className="font-display font-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl uppercase tracking-tighter text-foreground">
-              {t("work_title")}
+              <ScrambleText text={t("work_title")} duration={1.2} />
             </h2>
           </motion.div>
         </motion.div>
@@ -145,7 +146,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     offset: ["start end", "end start"]
   });
 
-  // Parallax effects
+  // Parallax effects para el scroll
   const textY = useTransform(scrollYProgress, [0, 1], [40, -40]);
   const imageY = useTransform(scrollYProgress, [0, 1], [-20, 20]);
 
@@ -217,23 +218,30 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
         {/* Right Column: Image Card */}
         <motion.div style={{ y: imageY }} className="lg:col-span-6 xl:col-span-7">
-          <Link href={`/work/${project.id}`} className="block relative group/image active:scale-[0.98] transition-transform duration-300">
-            <div className={`relative w-full aspect-[16/10] rounded-2xl md:rounded-[2rem] overflow-hidden border border-foreground/15 shadow-xl transition-all duration-500 group-hover:-translate-y-1.5 group-hover:shadow-2xl group-hover:border-foreground/30 bg-gradient-to-br ${project.bgGradient} p-4 sm:p-6 md:p-8 flex items-center justify-center`}>
+          <Link 
+            href={`/work/${project.id}`} 
+            className="block relative group/image active:scale-[0.98] transition-transform duration-300"
+          >
+            <div 
+              className={`relative w-full aspect-[16/10] rounded-2xl md:rounded-[2rem] overflow-hidden border border-foreground/15 shadow-xl transition-all duration-500 group-hover/image:shadow-[0_20px_50px_rgba(23,45,226,0.15)] group-hover/image:border-foreground/30 bg-gradient-to-br ${project.bgGradient} p-4 sm:p-6 md:p-8 flex items-center justify-center group-hover/image:-translate-y-2`}
+            >
               
               {/* Image Mockup with Scale Effect */}
-              <div className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-2xl z-10 pointer-events-none">
                 <Image
                   src={project.image}
                   alt={t(project.titleKey)}
                   fill
-                  className="object-contain transition-transform duration-700 ease-out group-hover/image:scale-105"
+                  className="object-contain transition-transform duration-700 ease-out group-hover/image:scale-[1.03]"
                   sizes="(max-width: 1024px) 100vw, 55vw"
                 />
-                <div className="absolute inset-0 bg-background/10 group-hover/image:bg-transparent transition-colors duration-500" />
               </div>
 
+              {/* Static CSS CSS Sheen Effect */}
+              <div className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover/image:opacity-100 transition-opacity duration-700 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover/image:translate-x-[100%] ease-in-out" style={{ transitionDuration: '1.5s' }} />
+
               {/* Arrow Action Button */}
-              <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-11 h-11 md:w-14 md:h-14 rounded-full bg-background/90 backdrop-blur-md border border-foreground/15 flex items-center justify-center text-foreground shadow-lg transition-transform duration-500 group-hover/image:scale-110 group-hover/image:bg-foreground group-hover/image:text-background">
+              <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 w-11 h-11 md:w-14 md:h-14 rounded-full bg-background/90 backdrop-blur-md border border-foreground/15 flex items-center justify-center text-foreground shadow-lg transition-transform duration-500 group-hover/image:scale-110 group-hover/image:bg-foreground group-hover/image:text-background z-30">
                 <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-500 group-hover/image:translate-x-0.5 group-hover/image:-translate-y-0.5" />
               </div>
 

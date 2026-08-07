@@ -4,6 +4,7 @@ import * as React from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight, Copy, Check, FileText } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
+import { ScrambleText } from "@/components/ScrambleText";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -95,7 +96,7 @@ export function Contact() {
               {t("contact_label")}
             </span>
             <h2 className="text-[3.5rem] sm:text-[6rem] md:text-[9rem] lg:text-[13rem] font-display font-black leading-[0.9] tracking-tighter uppercase text-foreground select-none">
-              {t("contact_heading")}
+              <ScrambleText text={t("contact_heading")} duration={1.2} />
             </h2>
           </motion.div>
 

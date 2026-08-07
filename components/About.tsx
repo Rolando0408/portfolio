@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/components/LanguageProvider";
 import { RevealParagraphs } from "@/components/RevealText";
+import { ScrambleText } from "@/components/ScrambleText";
 
 export function About() {
   const { t } = useLanguage();
@@ -27,7 +28,7 @@ export function About() {
             {t("about_label")}
           </span>
           <h2 className="text-[3.5rem] sm:text-[5rem] md:text-[8rem] lg:text-[11rem] font-display font-black leading-[0.9] tracking-tighter uppercase text-foreground">
-            {t("about_title")}
+            <ScrambleText text={t("about_title")} duration={1.2} />
           </h2>
         </motion.div>
 
