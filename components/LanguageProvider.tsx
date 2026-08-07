@@ -14,7 +14,7 @@ interface LanguageContextType {
 const translations: Record<Language, Record<string, string>> = {
   es: {
     // Navbar
-    nav_work: "WORK",
+    nav_work: "TRABAJO",
     nav_about: "SOBRE MÍ",
     nav_contact: "CONTACTO",
     

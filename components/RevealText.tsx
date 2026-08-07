@@ -17,11 +17,14 @@ export function RevealParagraphs({ paragraphs, className = "" }: RevealParagraph
   const containerRef = useRef<HTMLDivElement>(null);
   const pRefs = useRef<(HTMLParagraphElement | null)[]>([]);
 
+  const keyString = paragraphs.join("::");
+
   useGSAP(() => {
     if (!containerRef.current) return;
+    pRefs.current = pRefs.current.slice(0, paragraphs.length);
 
     // Crear la instancia de SplitText para dividir en líneas y aplicar máscaras
-    const split = SplitText.create(pRefs.current, {
+    const split = SplitText.create(pRefs.current.filter(Boolean), {
       type: "lines",
       linesClass: "line-wrapper",
       mask: "lines",
@@ -64,10 +67,10 @@ export function RevealParagraphs({ paragraphs, className = "" }: RevealParagraph
       st.kill();
       split.revert();
     };
-  }, { dependencies: [paragraphs], scope: containerRef });
+  }, { dependencies: [keyString], scope: containerRef });
 
   return (
-    <div ref={containerRef} className={className}>
+    <div key={keyString} ref={containerRef} className={className}>
       {paragraphs.map((text, idx) => (
         <p
           key={idx}

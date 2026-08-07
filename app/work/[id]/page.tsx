@@ -22,6 +22,10 @@ export default function CaseStudyPage() {
   React.useEffect(() => {
     if (lenis) {
       lenis.scrollTo(0, { immediate: true });
+      const timer = setTimeout(() => {
+        lenis.resize();
+      }, 150);
+      return () => clearTimeout(timer);
     } else {
       window.scrollTo(0, 0);
     }
@@ -35,7 +39,7 @@ export default function CaseStudyPage() {
   const nextProjectTitle = id === "argus" ? "Portal de Admisiones" : "Sistema ARGUS";
 
   return (
-    <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-[var(--accent)] selection:text-white">
+    <main className="relative min-h-screen bg-background text-foreground selection:bg-[var(--accent)] selection:text-white">
       {/* Floating Header */}
       <CaseStudyNavigation currentId={id} />
 
