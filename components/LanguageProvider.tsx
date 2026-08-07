@@ -23,6 +23,7 @@ const translations: Record<Language, Record<string, string>> = {
     hero_name_first: "Rolando",
     hero_name_last: "Rivas",
     hero_bio: "Ingeniero de Sistemas enfocado en construir arquitecturas escalables y experiencias web de alto impacto.",
+    hero_availability: "Disponible",
     hero_location: "Nueva Esparta, VE",
     hero_stack: "Full-Stack",
 
@@ -95,6 +96,7 @@ const translations: Record<Language, Record<string, string>> = {
     hero_name_first: "Rolando",
     hero_name_last: "Rivas",
     hero_bio: "Systems Engineering student & Full-Stack Developer building scalable web and desktop applications.",
+    hero_availability: "Available",
     hero_location: "Nueva Esparta, VE",
     hero_stack: "Full-Stack",
 

@@ -26,14 +26,16 @@ export function CustomCursor() {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
       setIsVisible((prev) => (prev ? prev : true));
+    };
 
-      // Check if mouse is hovering over an interactive element
+    const onMouseOver = (e: MouseEvent) => {
+      // Check if mouse is hovering over an interactive element only when entering new elements
       const target = e.target as Element | null;
       if (target && typeof target.closest === "function") {
         const isInteractive = Boolean(
           target.closest("a, button, [role='button'], input, textarea, select, .cursor-pointer")
         );
-        setIsHovered(isInteractive);
+        setIsHovered((prev) => (prev !== isInteractive ? isInteractive : prev));
       }
     };
 
@@ -43,6 +45,7 @@ export function CustomCursor() {
     const onMouseEnter = () => setIsVisible(true);
 
     window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseover", onMouseOver);
     window.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mouseup", onMouseUp);
     document.body.addEventListener("mouseleave", onMouseLeave);
@@ -50,6 +53,7 @@ export function CustomCursor() {
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseover", onMouseOver);
       window.removeEventListener("mousedown", onMouseDown);
       window.removeEventListener("mouseup", onMouseUp);
       document.body.removeEventListener("mouseleave", onMouseLeave);

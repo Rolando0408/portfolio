@@ -95,8 +95,8 @@ export function Hero() {
       {/* Bottom section: Clean Info & Location */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-end w-full">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="md:col-span-8"
         >
@@ -109,13 +109,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="md:col-span-4 flex items-center md:justify-end gap-3 text-xs font-mono uppercase tracking-widest text-[var(--accent)]"
+          className="md:col-span-4 flex flex-wrap items-center md:justify-end gap-2 text-xs font-mono uppercase tracking-widest text-[var(--accent)]"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
-          {t("hero_availability")}
-          <span>{t("hero_location")}</span>
+          <span className="whitespace-nowrap">{t("hero_location")}</span>
           <span>•</span>
-          <span>{t("hero_stack")}</span>
+          <span className="whitespace-nowrap">{t("hero_stack")}</span>
         </motion.div>
       </div>
 

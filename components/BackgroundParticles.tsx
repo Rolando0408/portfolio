@@ -191,7 +191,7 @@ export function BackgroundParticles() {
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] rounded-full opacity-[0.06] dark:opacity-[0.12]"
         style={{
           background: "radial-gradient(circle, var(--accent) 0%, transparent 70%)",
-          filter: "blur(120px)",
+          // Removed filter: blur() to prevent iOS Safari memory crashes
         }}
       />
       <canvas key="canvas-v2" ref={canvasRef} className="block w-full h-full opacity-60 dark:opacity-80 transition-opacity duration-1000" />
