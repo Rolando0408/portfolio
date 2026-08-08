@@ -5,11 +5,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { CaseStudyData } from "@/lib/caseStudiesData";
 
+import { useState } from "react";
+import { ZoomIn } from "lucide-react";
+import { ImageLightbox } from "./ImageLightbox";
+
 interface CaseStudyHeroProps {
   data: CaseStudyData;
 }
 
 export function CaseStudyHero({ data }: CaseStudyHeroProps) {
+  const [isHeroOpen, setIsHeroOpen] = useState(false);
+
   return (
     <div className="relative pt-32 pb-16 md:pt-40 md:pb-24 border-b border-foreground/10">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8">
@@ -122,20 +128,31 @@ export function CaseStudyHero({ data }: CaseStudyHeroProps) {
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.5 }}
-          className={`relative w-full max-w-5xl mx-auto aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden border border-foreground/15 shadow-2xl bg-gradient-to-br ${data.bgGradient} p-2 sm:p-4 md:p-6 lg:p-8`}
+          onClick={() => setIsHeroOpen(true)}
+          className={`relative w-full max-w-5xl mx-auto aspect-[16/9] rounded-2xl md:rounded-3xl overflow-hidden border border-foreground/15 shadow-2xl bg-gradient-to-br ${data.bgGradient} p-2 sm:p-4 md:p-6 lg:p-8 cursor-pointer group hover:border-foreground/30 transition-colors`}
         >
           <div className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-2xl bg-background">
             <Image
               src={data.heroImage}
               alt={data.title}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
               priority
               sizes="100vw"
             />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-mono text-xs uppercase tracking-widest backdrop-blur-[2px]">
+              <ZoomIn className="w-5 h-5" />
+              <span>Ampliar imagen</span>
+            </div>
           </div>
         </motion.div>
       </div>
+
+      <ImageLightbox
+        src={isHeroOpen ? data.heroImage : null}
+        alt={data.title}
+        onClose={() => setIsHeroOpen(false)}
+      />
     </div>
   );
 }

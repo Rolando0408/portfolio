@@ -56,7 +56,7 @@ const translations: Record<Language, Record<string, string>> = {
     admissions_desc: "Portal dinámico de alta velocidad diseñado para la gestión de aspirantes, validación de documentación y automatización de procesos de admisión.",
     admissions_metric1_val: "+80%",
     admissions_metric1_lbl: "Agilidad en trámites",
-    admissions_metric2_val: "10k+",
+    admissions_metric2_val: "+500",
     admissions_metric2_lbl: "Aspirantes procesados",
 
     // About Section
@@ -88,7 +88,7 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navbar
     nav_work: "WORK",
-    nav_about: "ABOUT",
+    nav_about: "ABOUT ME",
     nav_contact: "CONTACT",
     
     // Hero
@@ -129,12 +129,12 @@ const translations: Record<Language, Record<string, string>> = {
     admissions_desc: "High-speed portal designed for applicant management, document validation, and admissions workflow automation at Colegio Guayamurí.",
     admissions_metric1_val: "+33%",
     admissions_metric1_lbl: "Applicant capacity growth",
-    admissions_metric2_val: "200+",
+    admissions_metric2_val: "+500",
     admissions_metric2_lbl: "Applications in 2 months",
 
     // About Section
     about_label: "MY STORY",
-    about_title: "About",
+    about_title: "About Me",
     about_p1: "Systems Engineering student (GPA 17 pts, 100% Academic Scholarship) and Full-Stack Developer experienced in building robust solutions with React, FastAPI, Python, Electron, and Docker.",
     about_p2: "I have designed and deployed key platforms such as ARGUS (remote lab monitoring at UNIMAR), teacher performance evaluation tools, and admissions systems at Colegio Guayamurí.",
     about_p3: "I am passionate about clean architecture, analytical problem solving, and building intuitive, scalable distributed systems.",

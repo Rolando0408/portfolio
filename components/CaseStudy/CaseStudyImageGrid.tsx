@@ -3,8 +3,9 @@
 import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Image as ImageIcon, X } from "lucide-react";
+import { Image as ImageIcon } from "lucide-react";
 import Image from "next/image";
+import { ImageLightbox } from "./ImageLightbox";
 
 interface CaseStudyImageGridProps {
   count: number;
@@ -38,7 +39,7 @@ export function CaseStudyImageGrid({ count = 2, cols = 2, images = [] }: CaseStu
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 onClick={() => setSelectedImage(imgSrc)}
-                className="relative group aspect-[16/10] cursor-pointer rounded-2xl border border-foreground/15 overflow-hidden shadow-xl bg-foreground/5 p-2"
+                className="relative group aspect-[16/10] cursor-pointer rounded-2xl border border-foreground/15 overflow-hidden shadow-xl bg-foreground/5 p-2 hover:border-foreground/30 transition-colors"
               >
                 <div className="relative w-full h-full rounded-xl overflow-hidden bg-background">
                   <Image
@@ -79,41 +80,11 @@ export function CaseStudyImageGrid({ count = 2, cols = 2, images = [] }: CaseStu
         })}
       </div>
 
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-background/95 backdrop-blur-sm p-4 md:p-12"
-          >
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 p-2 rounded-full bg-foreground/10 hover:bg-foreground/20 text-foreground transition-colors z-50"
-            >
-              <X className="w-6 h-6" />
-            </button>
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="relative w-full h-full max-w-7xl max-h-full rounded-lg overflow-hidden flex items-center justify-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={selectedImage}
-                alt="Expanded project screen"
-                fill
-                className="object-contain"
-                sizes="100vw"
-                priority
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <ImageLightbox
+        src={selectedImage}
+        alt="Project screen preview"
+        onClose={() => setSelectedImage(null)}
+      />
     </>
   );
 }
